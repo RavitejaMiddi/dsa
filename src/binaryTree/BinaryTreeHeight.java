@@ -18,6 +18,8 @@ public class BinaryTreeHeight {
 
         System.out.println("finding height of binary tree using dfs");
         System.out.println(treeHeight(root));
+        System.out.println("Size of a Binary Tree");
+        System.out.println(sizeOfTree(root));
 
     }
 
@@ -51,6 +53,29 @@ public class BinaryTreeHeight {
         var left = treeHeight(root.left);
         var right = treeHeight(root.right);
         return Math.max(left,right) + 1;
+    }
+
+    //Function to return size of a nodes in Btree
+    //Size - Number of nodes in a Btree
+    public static int sizeOfTree(Node root){
+        int size = 0;
+        if(root==null) return size;
+        Queue<Node> queue = new LinkedList<>();
+        queue.add(root);
+        size++;
+
+        while(!queue.isEmpty()){
+            Node curr = queue.poll();
+            if(curr.left != null){
+                queue.add(curr.left);
+                size++;
+            } if(curr.right != null){
+                queue.add(curr.right);
+                size++;
+            }
+        }
+
+        return size;
     }
 
     public static Node insertNode(Node root,int val){
