@@ -16,10 +16,16 @@ public class BinaryTreeHeight {
 
         System.out.println(heightOfTree(root));
 
+        System.out.println("finding height of binary tree using dfs");
+        System.out.println(treeHeight(root));
+
     }
 
+
+    //Function to return height of a binary tree using bfs or level order traversal
+    //Height - Number of nodes from root to the deepest node.
     public static int heightOfTree(Node root){
-        int height = 0;
+        int height = -1;
         if(root==null) return height;
         Queue<Node> queue = new LinkedList<>();
         queue.add(root);
@@ -36,6 +42,15 @@ public class BinaryTreeHeight {
         }
 
         return height;
+    }
+
+    //Function to return height of a binary tree using dfs
+    //Height - Number of nodes from root to the deepest node.
+    public static int treeHeight(Node root){
+        if(root == null) return -1;
+        var left = treeHeight(root.left);
+        var right = treeHeight(root.right);
+        return Math.max(left,right) + 1;
     }
 
     public static Node insertNode(Node root,int val){
