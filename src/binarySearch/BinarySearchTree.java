@@ -25,6 +25,10 @@ public class BinarySearchTree {
         System.out.println("finding ele");
         System.out.println(findEleInBST(root,30));
 
+        System.out.println("deletion");
+        delete(root,20);
+        display(root);
+
     }
 
 
@@ -61,6 +65,41 @@ public class BinarySearchTree {
         return (val > root.key) ? findEleInBST(root.right,val) : findEleInBST(root.left,val);
     }
 
+    public static Node delete(Node root, int val){
+
+        if(root == null) return root;
+        if(root.key > val){
+            root.left = delete(root.left,val);
+        } else if (root.key < val) {
+            root.right = delete(root.right,val);
+        }else {
+            //first if root doesn't have any children delete it
+            if(root.left == null && root.right == null)
+                root = null;
+            else if (root.right!=null) { //if it has right child
+                    root.key = successor(root);
+                    root.right = delete(root.right,root.key);
+            }else {
+                root.key = predecessor(root);
+                root.left = delete(root.left,root.key);
+            }
+        }
+        return root;
+    }
+
+    private static int predecessor(Node root) {
+        root = root.left;
+        while(root.right != null)
+            root = root.right;
+        return root.key;
+    }
+
+    private static int successor(Node root) {
+        root = root.right;
+        while(root.left != null)
+            root = root.left;
+        return root.key;
+    }
 
 
 }
