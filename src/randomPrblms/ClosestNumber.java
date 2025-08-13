@@ -1,4 +1,4 @@
-/*
+package randomPrblms;/*
 * This program prints closest number of n if it is divisible by m.
 * @author ART
  */

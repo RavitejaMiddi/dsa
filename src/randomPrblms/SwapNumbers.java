@@ -1,4 +1,4 @@
-/*
+package randomPrblms;/*
 * This program swaps numbers
 * @author ART
  */

@@ -1,4 +1,4 @@
-/*
+package randomPrblms;/*
 * This program prints sum of first N natural numbers
 * @author ART
  */

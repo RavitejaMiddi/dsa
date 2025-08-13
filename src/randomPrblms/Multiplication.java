@@ -1,4 +1,4 @@
-/*
+package randomPrblms;/*
 * This program prints multiplication table of a number
 * @author ART
  */

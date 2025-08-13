@@ -1,3 +1,5 @@
+package randomPrblms;
+
 public class LinearSearchAlgo {
     static int[] array = {1,4,3,56,76,8,10};
     public static void main(String[] args) {

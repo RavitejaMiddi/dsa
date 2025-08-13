@@ -1,3 +1,5 @@
+package randomPrblms;
+
 public class SquareRootOfNumber {
     public static void main(String[] args) {
 

@@ -1,4 +1,4 @@
-
+package randomPrblms;
 /*
 * This program prints if a given number is even or odd
 @author ART

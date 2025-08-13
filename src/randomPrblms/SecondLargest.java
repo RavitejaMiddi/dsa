@@ -1,3 +1,5 @@
+package randomPrblms;
+
 import java.util.Arrays;
 
 public class SecondLargest {

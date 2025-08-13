@@ -1,4 +1,4 @@
-/**
+package randomPrblms; /**
  * @author Student Name - Student Number
  * This program translates English text to Fake Latin and vice versa.
  */
@@ -47,7 +47,7 @@ class FakeLatinTranslator {
     }
 }
 
-// Main class to handle user interaction
+// randomPrblms.Main class to handle user interaction
 public class FakeLatinApp {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in); // Scanner for user input
