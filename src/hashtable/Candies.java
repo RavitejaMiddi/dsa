@@ -2,6 +2,7 @@ package hashtable;
 
 import java.util.HashSet;
 import java.util.Set;
+import java.util.TreeSet;
 
 public class Candies {
     public static void main(String[] args) {
@@ -12,6 +13,7 @@ public class Candies {
     int candies = 0;
     int candiesToEat = candyType.length/2;
         Set<Integer> uniqueCandies = new HashSet<>();
+        Set set = new TreeSet();
         //we will have all unique candies
         for(int i=0;i<candyType.length;i++){
             if(!uniqueCandies.contains(candyType[i])){
