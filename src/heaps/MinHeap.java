@@ -30,6 +30,34 @@ public class MinHeap {
         return true;
     }
 
+    public boolean delete(){
+        if(currentHeapSize == 0)
+            return false;
+
+        minHeapArr[0] = minHeapArr[--currentHeapSize];
+        int i = 0;
+        //currentHeapSize++;
+
+        while (true){
+            int left = leftChild(i);
+            int right = rightChild(i);
+            int smallest = i;
+
+            // Find the smallest among parent and children
+            if (left < currentHeapSize && minHeapArr[left] < minHeapArr[smallest]) {
+                smallest = left;
+            }
+            if (right < currentHeapSize && minHeapArr[right] < minHeapArr[smallest]) {
+                smallest = right;
+            }
+            if(smallest == i) break;
+            swap(minHeapArr,i,smallest);
+            i = smallest;
+        }
+        return true;
+
+    }
+
     private void swap(int[] minHeapArr, int i, int parent) {
         int temp = minHeapArr[i];
         minHeapArr[i] = minHeapArr[parent];
@@ -72,6 +100,9 @@ public class MinHeap {
         heap.iterate();
 
         System.out.println(heap.getMin());
+
+        heap.delete();
+        heap.iterate();
 
 
 
