@@ -8,10 +8,9 @@ import java.util.stream.IntStream;
 
 public class FindKthLargest {
     public static void main(String[] args) {
-        System.out.println(findKthLargest(new int[]{3,2,3,1,2,4,5,5,6},4));
+        System.out.println(findKthLargestEle(new int[]{3,2,1,5,6,4},2));
     }
     public static int findKthLargest(int[] nums, int k) {
-
         PriorityQueue<Integer> priorityQueue = new PriorityQueue<>(Collections.reverseOrder());
 
         for(int val:nums){
@@ -22,6 +21,18 @@ public class FindKthLargest {
             res = priorityQueue.remove();
         }
         return res;
+
+    }
+    //Approach 2
+    public static int findKthLargestEle(int[] nums, int k) {
+        PriorityQueue<Integer> priorityQueue = new PriorityQueue<>(k);
+        for(int i=0;i<nums.length;i++){
+            priorityQueue.add(nums[i]);
+            if(priorityQueue.size() > k ){
+                priorityQueue.remove();
+            }
+        }
+        return priorityQueue.peek();
 
     }
 }
